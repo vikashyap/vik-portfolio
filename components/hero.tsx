@@ -6,7 +6,10 @@ import { Button } from "@/components/ui/button"
 
 export default function Hero() {
   const scrollToAbout = () => {
-    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })
+    const element = document.getElementById("about")
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" })
+    }
   }
 
   return (

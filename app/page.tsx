@@ -1,28 +1,24 @@
 "use client"
-
-import { Suspense } from "react"
-import { Canvas } from "@react-three/fiber"
-import { Environment, OrbitControls } from "@react-three/drei"
+import dynamic from "next/dynamic"
 import Hero from "@/components/hero"
 import About from "@/components/about"
 import Skills from "@/components/skills"
 import Experience from "@/components/experience"
 import Contact from "@/components/contact"
-import FloatingGeometry from "@/components/floating-geometry"
 import Navigation from "@/components/navigation"
+
+// Dynamically import the 3D components to prevent SSR issues
+const Scene3D = dynamic(() => import("@/components/scene-3d"), {
+  ssr: false,
+  loading: () => <div className="fixed inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900" />,
+})
 
 export default function Portfolio() {
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       {/* Fixed 3D Background */}
       <div className="fixed inset-0 z-0">
-        <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
-          <Suspense fallback={null}>
-            <Environment preset="night" />
-            <FloatingGeometry />
-            <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.5} />
-          </Suspense>
-        </Canvas>
+        <Scene3D />
       </div>
 
       {/* Navigation */}
