@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   description:
     "Portfolio of Vikas Kashyap - Seasoned web development professional with expertise in React.js, Next.js, TypeScript, and Web3 technologies.",
   generator: "v0.dev",
+  viewport: "width=device-width, initial-scale=1",
 }
 
 export default function RootLayout({
@@ -15,8 +16,13 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body suppressHydrationWarning={true}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </head>
+      <body suppressHydrationWarning={true}>
+        <div suppressHydrationWarning={true}>{children}</div>
+      </body>
     </html>
   )
 }

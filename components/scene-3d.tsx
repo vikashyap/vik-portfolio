@@ -1,26 +1,50 @@
 "use client"
 
-import { Suspense } from "react"
-import { Canvas } from "@react-three/fiber"
-import { Environment, OrbitControls } from "@react-three/drei"
-import FloatingGeometry from "@/components/floating-geometry"
+import { Suspense, useEffect, useState } from "react"
 
-function Scene3DContent() {
+// Loading fallback component
+function Scene3DFallback() {
   return (
-    <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
-      <Suspense fallback={null}>
-        <Environment preset="night" />
-        <FloatingGeometry />
-        <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.5} />
-      </Suspense>
-    </Canvas>
+    <div className="w-full h-full bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center">
+      <div className="text-purple-400 text-lg">Loading 3D Scene...</div>
+    </div>
   )
 }
 
+// Error boundary for 3D components
+function Scene3DError() {
+  return <div className="w-full h-full bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900" />
+}
+
 export default function Scene3D() {
-  return (
-    <Suspense fallback={<div className="w-full h-full bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900" />}>
-      <Scene3DContent />
-    </Suspense>
-  )
+  const [isClient, setIsClient] = useState(false)
+  const [hasError, setHasError] = useState(false)
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+
+  // Don't render on server
+  if (!isClient) {
+    return <Scene3DFallback />
+  }
+
+  // Handle errors gracefully
+  if (hasError) {
+    return <Scene3DError />
+  }
+
+  try {
+    // Lazy load the actual 3D scene
+    const Scene3DCanvas = require("./scene-3d-canvas").default
+
+    return (
+      <Suspense fallback={<Scene3DFallback />}>
+        <Scene3DCanvas onError={() => setHasError(true)} />
+      </Suspense>
+    )
+  } catch (error) {
+    console.warn("3D Scene failed to load:", error)
+    return <Scene3DError />
+  }
 }
