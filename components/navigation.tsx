@@ -7,9 +7,9 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 const navItems = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
-  { name: "Gallery", href: "#gallery" },
   { name: "Skills", href: "#skills" },
   { name: "Experience", href: "#experience" },
+  { name: "Gallery", href: "#gallery" },
   { name: "Hobbies", href: "#hobbies" },
   { name: "Contact", href: "#contact" },
 ]

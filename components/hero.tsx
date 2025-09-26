@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
 import { useState, useEffect } from "react"
+import DownloadResume from "./download-resume"
 
 // Background images for the hero slider
 const heroImages = [
@@ -173,12 +174,12 @@ export default function Hero() {
               <span className="text-purple-300 font-medium">Tenderize.me</span>.
             </motion.p>
 
-            {/* Action Button */}
+            {/* Action Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.0 }}
-              className="flex justify-center mt-12"
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12"
             >
               <Button
                 onClick={scrollToAbout}
@@ -188,6 +189,12 @@ export default function Hero() {
                 <Sparkles className="w-5 h-5 mr-2" />
                 Explore My Work
               </Button>
+              
+              <DownloadResume
+                variant="outline"
+                size="lg"
+                className="border-2 border-purple-400/50 text-purple-300 hover:bg-purple-500 hover:text-white bg-black/20 backdrop-blur-sm px-10 py-4 rounded-full text-lg font-medium shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 hover:scale-105 hover:border-purple-400"
+              />
             </motion.div>
 
             {/* Social Links */}
@@ -214,7 +221,7 @@ export default function Hero() {
               className="w-14 h-14 rounded-full border-2 border-blue-400/50 text-blue-300 hover:bg-blue-500 hover:text-white bg-black/20 backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:border-blue-400"
               asChild
             >
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/vikashyap" target="_blank" rel="noopener noreferrer">
                 <Github className="h-6 w-6" />
               </a>
             </Button>

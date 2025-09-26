@@ -91,7 +91,7 @@ export default function Contact() {
                   className="rounded-full border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white bg-transparent"
                   asChild
                 >
-                  <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                  <a href="https://github.com/vikashyap" target="_blank" rel="noopener noreferrer">
                     <Github className="h-5 w-5" />
                   </a>
                 </Button>

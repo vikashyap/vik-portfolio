@@ -221,7 +221,7 @@ export default function Hero() {
               className="w-14 h-14 rounded-full border-2 border-blue-400/50 text-blue-300 hover:bg-blue-500 hover:text-white bg-black/20 backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:border-blue-400"
               asChild
             >
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/vikashyap" target="_blank" rel="noopener noreferrer">
                 <Github className="h-6 w-6" />
               </a>
             </Button>
