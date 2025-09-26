@@ -1,0 +1,28 @@
+{
+  "name": "Vikas Kashyap - Frontend Lead & Web3 Developer",
+  "short_name": "Vikas Kashyap",
+  "description": "Portfolio of Vikas Kashyap - Frontend Lead & Web3 Developer in Berlin",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f0f23",
+  "theme_color": "#8b5cf6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/main.JPG",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/main.JPG", 
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity", "developer"],
+  "lang": "en-US",
+  "scope": "/",
+  "id": "vikas-kashyap-portfolio"
+}

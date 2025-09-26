@@ -2,12 +2,15 @@
 
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 const navItems = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
+  { name: "Gallery", href: "#gallery" },
   { name: "Skills", href: "#skills" },
   { name: "Experience", href: "#experience" },
+  { name: "Hobbies", href: "#hobbies" },
   { name: "Contact", href: "#contact" },
 ]
 
@@ -50,8 +53,11 @@ export default function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-2xl font-bold text-white">
-            VK
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center">
+            <Avatar className="w-10 h-10 ring-2 ring-purple-400/30 hover:ring-purple-400/50 transition-all duration-300">
+              <AvatarImage src="/IMG_658.jpeg" alt="Vikas Kashyap" />
+              <AvatarFallback className="bg-purple-500/20 text-purple-300 text-sm font-bold">VK</AvatarFallback>
+            </Avatar>
           </motion.div>
 
           <div className="hidden md:block">

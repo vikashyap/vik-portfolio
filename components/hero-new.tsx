@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, AnimatePresence } from "framer-motion"
-import { ArrowDown, Github, Linkedin, Mail, Sparkles } from "lucide-react"
+import { ArrowDown, Github, Linkedin, Mail, Download, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
@@ -10,34 +10,24 @@ import { useState, useEffect } from "react"
 // Background images for the hero slider
 const heroImages = [
   {
-    src: "/main.JPG", // Main professional photo
-    alt: "Vikas Kashyap - Professional Portrait",
-    title: "Professional"
-  },
-  {
-    src: "/IMG_658.jpeg", // Professional workspace photo
+    src: "/placeholder.jpg", // Replace with your professional workspace photo
     alt: "Vikas at work - Frontend Development",
     title: "Coding Excellence"
   },
   {
-    src: "/IMG_7010.jpeg", // Tech conference/meetup photo
+    src: "/placeholder-user.jpg", // Replace with your professional headshot
+    alt: "Vikas Kashyap - Professional Portrait",
+    title: "Professional"
+  },
+  {
+    src: "/placeholder.jpg", // Replace with tech conference/meetup photo
     alt: "Vikas at Web3 Conference",
     title: "Web3 Innovation"
   },
   {
-    src: "/IMG_4660.JPG", // New lifestyle photo
-    alt: "Vikas Kashyap - Lifestyle",
-    title: "Lifestyle"
-  },
-  {
-    src: "/IMG_4676.JPG", // New adventure photo
-    alt: "Vikas Kashyap - Adventure",
-    title: "Adventure"
-  },
-  {
-    src: "/IMG_469.JPG", // New casual photo
-    alt: "Vikas Kashyap - Casual",
-    title: "Casual Moments"
+    src: "/placeholder.jpg", // Replace with team collaboration photo
+    alt: "Vikas leading frontend team",
+    title: "Team Leadership"
   }
 ]
 
@@ -55,6 +45,13 @@ export default function Hero() {
 
   const scrollToAbout = () => {
     const element = document.getElementById("about")
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" })
+    }
+  }
+
+  const scrollToGallery = () => {
+    const element = document.getElementById("gallery")
     if (element) {
       element.scrollIntoView({ behavior: "smooth" })
     }
@@ -109,94 +106,104 @@ export default function Hero() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="space-y-8 min-h-screen flex flex-col justify-center"
+          className="space-y-8"
         >
-            {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="flex justify-center"
-            >
-              <Badge className="bg-gradient-to-r from-purple-500/20 to-blue-500/20 text-white border-purple-400/30 px-4 py-2 text-sm backdrop-blur-sm">
-                <Sparkles className="w-4 h-4 mr-2" />
-                Available for new opportunities
-              </Badge>
-            </motion.div>
+          {/* Badge */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex justify-center"
+          >
+            <Badge className="bg-gradient-to-r from-purple-500/20 to-blue-500/20 text-white border-purple-400/30 px-4 py-2 text-sm backdrop-blur-sm">
+              <Sparkles className="w-4 h-4 mr-2" />
+              Available for new opportunities
+            </Badge>
+          </motion.div>
 
-            {/* Main Title */}
-            <motion.h1
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.7 }}
-              className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 tracking-tight"
-            >
-              <span className="bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
-                VIKAS
-              </span>
-              <br />
-              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
-                KASHYAP
-              </span>
-            </motion.h1>
+          {/* Main Title */}
+          <motion.h1
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="text-6xl md:text-8xl lg:text-9xl font-bold text-white mb-4 tracking-tight"
+          >
+            <span className="bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
+              VIKAS
+            </span>
+            <br />
+            <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
+              KASHYAP
+            </span>
+          </motion.h1>
 
-            {/* Subtitle */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              className="text-xl md:text-3xl lg:text-4xl font-light mb-8"
-            >
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-blue-300">
-                Front-End Lead
-              </span>
-              <span className="text-white"> & </span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300">
-                Web3 Developer
-              </span>
-            </motion.div>
+          {/* Subtitle */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="text-2xl md:text-4xl lg:text-5xl font-light mb-8"
+          >
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-blue-300">
+              Front-End Lead
+            </span>
+            <span className="text-white"> & </span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300">
+              Web3 Developer
+            </span>
+          </motion.div>
 
-            {/* Description */}
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.9 }}
-              className="text-lg md:text-xl text-gray-200 max-w-3xl leading-relaxed font-light"
-            >
-              Seasoned web development professional with a{" "}
-              <span className="text-purple-300 font-medium">decade of industry experience</span>, 
-              specializing in{" "}
-              <span className="text-blue-300 font-medium">React.js, Next.js, TypeScript</span>, 
-              and cutting-edge{" "}
-              <span className="text-cyan-300 font-medium">Web3 technologies</span>. 
-              Currently leading front-end development at{" "}
-              <span className="text-purple-300 font-medium">Tenderize.me</span>.
-            </motion.p>
+          {/* Description */}
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+            className="text-lg md:text-xl lg:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed font-light"
+          >
+            Seasoned web development professional with a{" "}
+            <span className="text-purple-300 font-medium">decade of industry experience</span>, 
+            specializing in{" "}
+            <span className="text-blue-300 font-medium">React.js, Next.js, TypeScript</span>, 
+            and cutting-edge{" "}
+            <span className="text-cyan-300 font-medium">Web3 technologies</span>. 
+            Currently leading front-end development at{" "}
+            <span className="text-purple-300 font-medium">Tenderize.me</span>.
+          </motion.p>
 
-            {/* Action Button */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.0 }}
-              className="flex justify-center mt-12"
+          {/* Action Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.9 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-12"
+          >
+            <Button
+              onClick={scrollToAbout}
+              size="lg"
+              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-10 py-4 rounded-full text-lg font-medium shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 hover:scale-105"
             >
-              <Button
-                onClick={scrollToAbout}
-                size="lg"
-                className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-10 py-4 rounded-full text-lg font-medium shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 hover:scale-105"
-              >
-                <Sparkles className="w-5 h-5 mr-2" />
-                Explore My Work
-              </Button>
-            </motion.div>
+              <Sparkles className="w-5 h-5 mr-2" />
+              Explore My Work
+            </Button>
 
-            {/* Social Links */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.1 }}
-              className="flex items-center justify-center gap-6 mt-8"
+            <Button
+              onClick={scrollToGallery}
+              variant="outline"
+              size="lg"
+              className="border-2 border-white/30 text-white hover:bg-white/10 px-8 py-4 rounded-full text-lg font-medium backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-white/50"
             >
+              <Download className="w-5 h-5 mr-2" />
+              View Gallery
+            </Button>
+          </motion.div>
+
+          {/* Social Links */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.1 }}
+            className="flex items-center justify-center gap-6 mt-8"
+          >
             <Button
               variant="outline"
               size="icon"
@@ -229,16 +236,15 @@ export default function Hero() {
                 <Mail className="h-6 w-6" />
               </a>
             </Button>
-            </motion.div>
-        </motion.div>
+          </motion.div>
 
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1.3 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        >
+          {/* Scroll Indicator */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 1.3 }}
+            className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          >
             <motion.div
               animate={{ y: [0, 15, 0] }}
               transition={{ duration: 2.5, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
@@ -252,6 +258,7 @@ export default function Hero() {
                 <ArrowDown className="h-6 w-6 text-purple-400 group-hover:text-purple-300 transition-colors" />
               </div>
             </motion.div>
+          </motion.div>
         </motion.div>
       </div>
 
@@ -262,8 +269,8 @@ export default function Hero() {
             key={i}
             className="absolute w-2 h-2 bg-white/20 rounded-full"
             initial={{
-              x: Math.random() * 1200,
-              y: Math.random() * 800,
+              x: Math.random() * window.innerWidth,
+              y: Math.random() * window.innerHeight,
             }}
             animate={{
               y: [null, Math.random() * -100 - 50],
@@ -280,4 +287,3 @@ export default function Hero() {
     </section>
   )
 }
-

@@ -7,6 +7,8 @@ import Hero from "@/components/hero"
 import About from "@/components/about"
 import Skills from "@/components/skills"
 import Experience from "@/components/experience"
+import Hobbies from "@/components/hobbies"
+import PictureSlider from "@/components/picture-slider"
 import Contact from "@/components/contact"
 import Navigation from "@/components/navigation"
 
@@ -53,6 +55,8 @@ export default function Portfolio() {
         <About />
         <Skills />
         <Experience />
+        <PictureSlider />
+        <Hobbies />
         <Contact />
       </div>
     </div>

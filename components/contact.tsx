@@ -5,9 +5,12 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin, Linkedin, Github } from "lucide-react"
+import { Mail, Phone, MapPin, Linkedin, Github, Send, CheckCircle, AlertCircle } from "lucide-react"
+import { useForm, ValidationError } from '@formspree/react'
 
 export default function Contact() {
+  const [state, handleSubmit] = useForm("mwprpjkr")
+
   return (
     <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-black/20">
       <div className="max-w-6xl mx-auto">
@@ -105,29 +108,102 @@ export default function Contact() {
             <Card className="bg-white/5 backdrop-blur-md border-white/10">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold text-white mb-6">Send Message</h3>
-                <form className="space-y-6">
+                
+                {/* Success Message */}
+                {state.succeeded && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="mb-6 p-4 bg-green-500/20 border border-green-500/30 rounded-lg flex items-center gap-3"
+                  >
+                    <CheckCircle className="h-5 w-5 text-green-400" />
+                    <p className="text-green-300">Thank you! Your message has been sent successfully.</p>
+                  </motion.div>
+                )}
+
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <Input
+                        id="name"
+                        name="name"
+                        type="text"
+                        placeholder="Your Name"
+                        required
+                        className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-purple-400"
+                      />
+                      <ValidationError 
+                        prefix="Name" 
+                        field="name"
+                        errors={state.errors}
+                        className="text-red-400 text-sm mt-1"
+                      />
+                    </div>
+                    <div>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        placeholder="Your Email"
+                        required
+                        className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-purple-400"
+                      />
+                      <ValidationError 
+                        prefix="Email" 
+                        field="email"
+                        errors={state.errors}
+                        className="text-red-400 text-sm mt-1"
+                      />
+                    </div>
+                  </div>
+                  <div>
                     <Input
-                      placeholder="Your Name"
-                      className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
+                      id="subject"
+                      name="subject"
+                      type="text"
+                      placeholder="Subject"
+                      required
+                      className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-purple-400"
                     />
-                    <Input
-                      type="email"
-                      placeholder="Your Email"
-                      className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
+                    <ValidationError 
+                      prefix="Subject" 
+                      field="subject"
+                      errors={state.errors}
+                      className="text-red-400 text-sm mt-1"
                     />
                   </div>
-                  <Input
-                    placeholder="Subject"
-                    className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
-                  />
-                  <Textarea
-                    placeholder="Your Message"
-                    rows={5}
-                    className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
-                  />
-                  <Button type="submit" className="w-full bg-purple-600 hover:bg-purple-700 text-white">
-                    Send Message
+                  <div>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      placeholder="Your Message"
+                      rows={5}
+                      required
+                      className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-purple-400"
+                    />
+                    <ValidationError 
+                      prefix="Message" 
+                      field="message"
+                      errors={state.errors}
+                      className="text-red-400 text-sm mt-1"
+                    />
+                  </div>
+                  <Button 
+                    type="submit" 
+                    disabled={state.submitting}
+                    className="w-full bg-purple-600 hover:bg-purple-700 text-white disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+                  >
+                    {state.submitting ? (
+                      <div className="flex items-center gap-2">
+                        <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                        Sending...
+                      </div>
+                    ) : (
+                      <div className="flex items-center gap-2">
+                        <Send className="h-4 w-4" />
+                        Send Message
+                      </div>
+                    )}
                   </Button>
                 </form>
               </CardContent>
