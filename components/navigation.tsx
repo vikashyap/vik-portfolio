@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Button } from "@/components/ui/button"
+import { Calendar } from "lucide-react"
 
 const navItems = [
   { name: "Home", href: "#home" },
@@ -53,11 +55,21 @@ export default function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center">
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center space-x-4">
             <Avatar className="w-10 h-10 ring-2 ring-purple-400/30 hover:ring-purple-400/50 transition-all duration-300">
               <AvatarImage src="/IMG_658.jpeg" alt="Vikas Kashyap" />
               <AvatarFallback className="bg-purple-500/20 text-purple-300 text-sm font-bold">VK</AvatarFallback>
             </Avatar>
+            
+            {/* Book an Appointment Button */}
+            <Button
+              onClick={() => window.open('https://calendly.com/kashyapvikas20/lets-know-each-other', '_blank', 'noopener,noreferrer')}
+              size="sm"
+              className="bg-gradient-to-r from-orange-500/20 to-amber-500/20 hover:from-orange-500/30 hover:to-amber-500/30 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg hover:shadow-orange-500/25 transition-all duration-300 hover:scale-105 backdrop-blur-sm border border-orange-400/30 hover:border-orange-400/50"
+            >
+              <Calendar className="w-4 h-4 mr-2" />
+              Book Appointment
+            </Button>
           </motion.div>
 
           <div className="hidden md:block">

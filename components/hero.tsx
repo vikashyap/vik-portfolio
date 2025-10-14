@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, AnimatePresence } from "framer-motion"
-import { ArrowDown, Github, Linkedin, Mail, Sparkles } from "lucide-react"
+import { ArrowDown, Github, Linkedin, Mail, Sparkles, Calendar } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
@@ -237,6 +237,24 @@ export default function Hero() {
               </a>
             </Button>
             </motion.div>
+
+            {/* Book an Appointment Button */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.2 }}
+              className="flex justify-center mt-6"
+            >
+              <Button
+                onClick={() => window.open('https://calendly.com/kashyapvikas20/lets-know-each-other', '_blank', 'noopener,noreferrer')}
+                size="lg"
+                className="bg-gradient-to-r from-orange-500/20 to-amber-500/20 hover:from-orange-500/30 hover:to-amber-500/30 text-white px-8 py-3 rounded-full text-base font-medium shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 hover:scale-105 backdrop-blur-sm border border-orange-400/30 hover:border-orange-400/50"
+              >
+                <Calendar className="w-5 h-5 mr-2" />
+                Book an Appointment
+              </Button>
+            </motion.div>
+
         </motion.div>
 
         {/* Scroll Indicator */}
