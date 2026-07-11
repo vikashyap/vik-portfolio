@@ -11,8 +11,8 @@ const navItems = [
   { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
   { name: "Experience", href: "#experience" },
-  { name: "Gallery", href: "#gallery" },
-  { name: "Hobbies", href: "#hobbies" },
+  { name: "Projects", href: "#projects" },
+  { name: "Beyond", href: "#beyond" },
   { name: "Contact", href: "#contact" },
 ]
 
@@ -42,7 +42,10 @@ export default function Navigation() {
 
   const scrollToSection = (href: string) => {
     const element = document.getElementById(href.substring(1))
-    if (element) {
+    if (!element) return
+    if (window.__lenis) {
+      window.__lenis.scrollTo(element, { offset: -64 })
+    } else {
       element.scrollIntoView({ behavior: "smooth" })
     }
   }

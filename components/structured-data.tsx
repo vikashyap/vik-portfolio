@@ -18,8 +18,8 @@ export default function StructuredData() {
     },
     "worksFor": {
       "@type": "Organization",
-      "name": "Tenderize.me",
-      "url": "https://tenderize.me"
+      "name": "Natuvion GmbH",
+      "url": "https://www.natuvion.com"
     },
     "alumniOf": {
       "@type": "EducationalOrganization",

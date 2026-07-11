@@ -1,16 +1,34 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Image from "next/image"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Calendar, MapPin } from "lucide-react"
 
 const experiences = [
   {
+    title: "Senior Full-Stack Software Engineer",
+    company: "Natuvion",
+    logo: "/logos/natuvion.png",
+    location: "Berlin",
+    period: "Jun 2026 - Present",
+    description:
+      "Product development at Natuvion — \"the digital moving company\" for enterprise data. Building full-stack features for the Data Conversion Suite (DCS), the platform powering secure data transformations to SAP S/4HANA and other modern platforms for 1,000+ enterprise customers.",
+    technologies: ["Next.js", "React.js", "TypeScript", "Node.js", "Tailwind CSS"],
+    highlights: [
+      "Full-stack product development on the Data Conversion Suite (DCS) platform",
+      "Enterprise-grade UIs with Next.js, React, and TypeScript",
+      "Building tooling for large-scale data migration and transformation workflows",
+      "Collaborating in an agile, cross-functional product team",
+    ],
+  },
+  {
     title: "Front End Lead",
     company: "Tenderize",
+    logo: "/logos/tenderize.png",
     location: "Berlin",
-    period: "Oct 2023 - Present",
+    period: "Oct 2023 - May 2026",
     description:
       "Leading front-end development for Web3 applications, specializing in Ethereum and Solana blockchain integrations. Developing advanced dApps with high performance and user-friendly interfaces.",
     technologies: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "Wagmi", "Viem", "Solana Web3.js", "The Graph"],
@@ -24,6 +42,7 @@ const experiences = [
   {
     title: "Front End Lead Developer",
     company: "Snubes",
+    logo: "/logos/snubes.png",
     location: "Berlin Area",
     period: "Jul 2018 - Sep 2023",
     description:
@@ -39,6 +58,7 @@ const experiences = [
   {
     title: "Senior Frontend Developer",
     company: "Ticketmaster",
+    logo: "/logos/ticketmaster.png",
     location: "Gurgaon",
     period: "May 2017 - Jul 2018",
     description:
@@ -54,6 +74,7 @@ const experiences = [
   {
     title: "Frontend Developer",
     company: "Jade Global",
+    logo: "/logos/jade-global.png",
     location: "Noida",
     period: "Jan 2015 - Apr 2017",
     description:
@@ -79,7 +100,7 @@ export default function Experience() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Work Experience</h2>
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">Work Experience</h2>
           <div className="w-24 h-1 bg-purple-400 mx-auto"></div>
         </motion.div>
 
@@ -95,9 +116,20 @@ export default function Experience() {
               <Card className="bg-white/5 backdrop-blur-md border-white/10">
                 <CardHeader>
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                    <div>
-                      <CardTitle className="text-2xl text-white">{exp.title}</CardTitle>
-                      <p className="text-xl text-purple-400 font-semibold">{exp.company}</p>
+                    <div className="flex items-center gap-4">
+                      <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-white/90 border border-white/20 p-2 flex items-center justify-center overflow-hidden">
+                        <Image
+                          src={exp.logo}
+                          alt={`${exp.company} logo`}
+                          width={40}
+                          height={40}
+                          className="object-contain"
+                        />
+                      </div>
+                      <div>
+                        <CardTitle className="text-2xl text-white">{exp.title}</CardTitle>
+                        <p className="text-xl text-purple-400 font-semibold">{exp.company}</p>
+                      </div>
                     </div>
                     <div className="flex flex-col sm:flex-row gap-2 text-sm text-gray-400">
                       <div className="flex items-center gap-1">

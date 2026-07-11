@@ -1,18 +1,25 @@
 "use client"
 
-import type React from "react"
-
-import { Suspense, useState, useEffect } from "react"
+import { useEffect, useState } from "react"
+import dynamic from "next/dynamic"
 import Hero from "@/components/hero"
 import About from "@/components/about"
 import Skills from "@/components/skills"
 import Experience from "@/components/experience"
-import Hobbies from "@/components/hobbies"
-import PictureSlider from "@/components/picture-slider"
+import Projects from "@/components/projects"
+import BeyondCode from "@/components/beyond-code"
 import Contact from "@/components/contact"
 import Navigation from "@/components/navigation"
+import ScrollTracker from "@/components/scroll-tracker"
+import SmoothScroll from "@/components/smooth-scroll"
+import { getPerfTier, prefersReducedMotion } from "@/lib/perf"
 
-// Simple fallback background
+const SceneCanvas = dynamic(() => import("@/components/three/scene-canvas"), {
+  ssr: false,
+})
+
+// Always rendered behind the canvas — it is the permanent fallback for
+// no-WebGL, reduced-motion, and low-power devices.
 function BackgroundFallback() {
   return (
     <div className="fixed inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
@@ -25,26 +32,21 @@ export default function Portfolio() {
   const [show3D, setShow3D] = useState(false)
 
   useEffect(() => {
-    // Only show 3D on client and after a delay
-    const timer = setTimeout(() => {
-      setShow3D(true)
-    }, 1000)
-
-    return () => clearTimeout(timer)
+    if (prefersReducedMotion()) return
+    if (getPerfTier() === "low") return
+    setShow3D(true)
   }, [])
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      {/* Background - either 3D or fallback */}
+      {/* Background: gradient always, 3D world layered on top when capable */}
       <div className="fixed inset-0 z-0">
-        {show3D ? (
-          <Suspense fallback={<BackgroundFallback />}>
-            <Scene3DLazy />
-          </Suspense>
-        ) : (
-          <BackgroundFallback />
-        )}
+        <BackgroundFallback />
+        {show3D && <SceneCanvas />}
       </div>
+
+      <ScrollTracker />
+      <SmoothScroll />
 
       {/* Navigation */}
       <Navigation />
@@ -55,27 +57,10 @@ export default function Portfolio() {
         <About />
         <Skills />
         <Experience />
-        <PictureSlider />
-        <Hobbies />
+        <Projects />
+        <BeyondCode />
         <Contact />
       </div>
     </div>
   )
-}
-
-// Lazy loaded 3D scene
-function Scene3DLazy() {
-  const [Scene3D, setScene3D] = useState<React.ComponentType | null>(null)
-
-  useEffect(() => {
-    import("@/components/scene-3d")
-      .then((module) => setScene3D(() => module.default))
-      .catch(() => setScene3D(() => BackgroundFallback))
-  }, [])
-
-  if (!Scene3D) {
-    return <BackgroundFallback />
-  }
-
-  return <Scene3D />
 }

@@ -3,9 +3,6 @@
 import React, { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Download, FileText, Loader2 } from 'lucide-react'
-import { pdf } from '@react-pdf/renderer'
-import ResumePDF from './resume-pdf'
-import { generateJsPDFResume } from './jspdf-resume'
 
 interface DownloadResumeProps {
   variant?: 'default' | 'outline' | 'ghost'
@@ -32,8 +29,13 @@ const DownloadResume: React.FC<DownloadResumeProps> = ({
       }
       
       try {
-        // Try react-pdf first
+        // Try react-pdf first — loaded on demand so the heavy PDF libraries
+        // stay out of the initial page bundle
         console.log('Trying react-pdf...')
+        const [{ pdf }, { default: ResumePDF }] = await Promise.all([
+          import('@react-pdf/renderer'),
+          import('./resume-pdf'),
+        ])
         const pdfInstance = pdf(<ResumePDF />)
         const blob = await pdfInstance.toBlob()
         
@@ -69,13 +71,15 @@ const DownloadResume: React.FC<DownloadResumeProps> = ({
       
       // Fallback to jsPDF
       console.log('Using jsPDF fallback...')
+      const { generateJsPDFResume } = await import('./jspdf-resume')
       const doc = generateJsPDFResume()
       doc.save('Vikas_Kashyap_Resume.pdf')
       console.log('jsPDF download triggered')
       
     } catch (error) {
       console.error('Error generating PDF:', error)
-      alert(`Error generating PDF: ${error.message}. Please try again or contact support.`)
+      const message = error instanceof Error ? error.message : String(error)
+      alert(`Error generating PDF: ${message}. Please try again or contact support.`)
     } finally {
       setIsGenerating(false)
     }

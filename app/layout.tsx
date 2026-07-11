@@ -1,14 +1,27 @@
 import type React from "react"
 import type { Metadata, Viewport } from "next"
+import { Inter, Space_Grotesk } from "next/font/google"
 import StructuredData from "@/components/structured-data"
 import "./globals.css"
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+})
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+})
 
 export const metadata: Metadata = {
   title: {
     default: "Vikas Kashyap - Frontend Lead & Web3 Developer | Berlin",
     template: "%s | Vikas Kashyap - Frontend Developer"
   },
-  description: "Experienced Frontend Lead & Web3 Developer in Berlin with 10+ years expertise in React.js, Next.js, TypeScript, Solana, Ethereum. Currently leading frontend development at Tenderize.me. Available for new opportunities.",
+  description: "Experienced Frontend Lead & Web3 Developer in Berlin with 10+ years expertise in React.js, Next.js, TypeScript, Solana, Ethereum. Currently building enterprise data-transformation products at Natuvion GmbH.",
   keywords: [
     "Frontend Developer",
     "Web3 Developer", 
@@ -91,11 +104,17 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <head>
         <StructuredData />
       </head>
       <body suppressHydrationWarning={true}>
+        <a
+          href="#home"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-purple-600 focus:text-white focus:rounded-md"
+        >
+          Skip to content
+        </a>
         <div suppressHydrationWarning={true}>{children}</div>
       </body>
     </html>

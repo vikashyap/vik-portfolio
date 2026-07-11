@@ -12,7 +12,23 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+  		fontFamily: {
+  			sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+  			display: ['var(--font-display)', 'var(--font-sans)', 'sans-serif']
+  		},
   		colors: {
+  			brand: {
+  				'300': '#c4b5fd',
+  				'400': '#a78bfa',
+  				'500': '#8b5cf6',
+  				'600': '#7c3aed',
+  				'700': '#6d28d9',
+  				'900': '#4c1d95'
+  			},
+  			glow: {
+  				cyan: '#22d3ee',
+  				pink: '#ec4899'
+  			},
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {

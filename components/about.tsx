@@ -53,7 +53,7 @@ export default function About() {
             <Globe className="w-4 h-4 mr-2" />
             About Me
           </Badge>
-          <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent mb-6">
+          <h2 className="font-display text-4xl md:text-6xl font-bold bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent mb-6">
             Crafting Digital Excellence
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
@@ -91,7 +91,7 @@ export default function About() {
                     <p className="text-purple-300 font-medium">Frontend Lead & Web3 Developer</p>
                     <div className="flex items-center gap-2 mt-2">
                       <Building2 className="w-4 h-4 text-blue-400" />
-                      <span className="text-sm text-gray-400">Tenderize.me</span>
+                      <span className="text-sm text-gray-400">Natuvion GmbH</span>
                       <Separator orientation="vertical" className="h-4 bg-slate-600" />
                       <MapPin className="w-4 h-4 text-purple-400" />
                       <span className="text-sm text-gray-400">Berlin, Germany</span>
@@ -107,10 +107,10 @@ export default function About() {
                       My Journey
                     </h4>
                     <p className="text-gray-300 leading-relaxed">
-                      As a seasoned web development professional with a <span className="text-purple-300 font-medium">decade of industry experience</span>, 
-                      I specialize in crafting exceptional digital experiences. My expertise spans from traditional web development to 
-                      cutting-edge <span className="text-blue-300 font-medium">Web3 technologies</span>, where I currently lead frontend 
-                      development at Tenderize.me.
+                      As a seasoned web development professional with a <span className="text-purple-300 font-medium">decade of industry experience</span>,
+                      I specialize in crafting exceptional digital experiences. My expertise spans from traditional web development and
+                      cutting-edge <span className="text-blue-300 font-medium">Web3 technologies</span> to enterprise products — I currently
+                      build data-transformation software at <span className="text-green-300 font-medium">Natuvion</span> in Berlin.
                     </p>
                   </div>
                   

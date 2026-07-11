@@ -10,18 +10,32 @@ export const resumeData = {
     website: "https://vik-portfolio-ecru.vercel.app"
   },
   
-  summary: "Seasoned web development professional with a decade of industry experience, specializing in React.js, Next.js, TypeScript, and cutting-edge Web3 technologies. Currently leading front-end development at Tenderize.me.",
-  
-  journey: "As a seasoned web development professional with a decade of industry experience, I specialize in crafting exceptional digital experiences. My expertise spans from traditional web development to cutting-edge Web3 technologies, where I currently lead frontend development at Tenderize.me.",
+  summary: "Seasoned web development professional with a decade of industry experience, specializing in React.js, Next.js, TypeScript, and cutting-edge Web3 technologies. Currently building enterprise data-transformation products at Natuvion GmbH in Berlin.",
+
+  journey: "As a seasoned web development professional with a decade of industry experience, I specialize in crafting exceptional digital experiences. My expertise spans from traditional web development and cutting-edge Web3 technologies to enterprise product development at Natuvion GmbH.",
   
   whatIDo: "I excel in agile methodologies, collaborating seamlessly with cross-functional teams to deliver innovative solutions. My diverse background spans multiple platforms web, mobile, and widgets enabling me to approach challenges with fresh perspectives and develop cutting-edge, decentralized applications (dApps).",
   
   experience: [
     {
+      title: "Senior Full-Stack Software Engineer",
+      company: "Natuvion",
+      location: "Berlin",
+      period: "Jun 2026 - Present",
+      description: "Product development for Natuvion's Data Conversion Suite (DCS) — the platform powering secure enterprise data transformations to SAP S/4HANA and other modern platforms.",
+      achievements: [
+        "Full-stack product development on the Data Conversion Suite (DCS) platform",
+        "Enterprise-grade UIs with Next.js, React, and TypeScript",
+        "Tooling for large-scale data migration and transformation workflows",
+        "Agile collaboration in a cross-functional product team"
+      ],
+      technologies: ["Next.js", "React.js", "TypeScript", "Node.js", "Tailwind CSS"]
+    },
+    {
       title: "Front End Lead",
       company: "Tenderize",
       location: "Berlin",
-      period: "Oct 2023 - Present",
+      period: "Oct 2023 - May 2026",
       description: "Leading front-end development for Web3 applications, specializing in Ethereum and Solana blockchain integrations. Developing advanced dApps with high performance and user-friendly interfaces.",
       achievements: [
         "Ethereum Integration: Token management and smart contract interactions",
@@ -124,6 +138,7 @@ export const resumeData = {
   
   achievements: [
     "10+ years of industry experience in web development",
+    "Full-stack product development on Natuvion's Data Conversion Suite",
     "Led frontend development for Web3 applications at Tenderize",
     "Architected micro front-end solutions with Monorepo architecture",
     "Specialized in 3D web applications using Three.js",
