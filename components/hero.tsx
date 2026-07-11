@@ -56,7 +56,7 @@ export default function Hero() {
             </span>
             <span className="text-white"> & </span>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300">
-              Web3 Developer
+              Full-Stack Engineer
             </span>
           </motion.div>
 
@@ -67,14 +67,12 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.9 }}
             className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed font-light"
           >
-            Seasoned web development professional with a{" "}
-            <span className="text-purple-300 font-medium">decade of industry experience</span>,
-            specializing in{" "}
-            <span className="text-blue-300 font-medium">React.js, Next.js, TypeScript</span>,
-            and cutting-edge{" "}
-            <span className="text-cyan-300 font-medium">Web3 technologies</span>.
-            Currently building enterprise data-transformation products at{" "}
-            <span className="text-purple-300 font-medium">Natuvion</span>.
+            Crafting exceptional web experiences for{" "}
+            <span className="text-purple-300 font-medium">13+ years</span> with{" "}
+            <span className="text-blue-300 font-medium">React.js, Next.js, and TypeScript</span>{" "}
+            — from <span className="text-cyan-300 font-medium">Web3 dApps</span> to enterprise
+            platforms. Currently building data-transformation products at{" "}
+            <span className="text-purple-300 font-medium">Natuvion</span> in Berlin.
           </motion.p>
 
           {/* Action Buttons */}

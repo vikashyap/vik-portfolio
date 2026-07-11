@@ -21,10 +21,10 @@ import {
 } from "lucide-react"
 
 const achievements = [
-  { icon: Trophy, label: "10+ Years", description: "Industry Experience" },
+  { icon: Trophy, label: "13+ Years", description: "Industry Experience" },
   { icon: Code2, label: "50+ Projects", description: "Successfully Delivered" },
   { icon: Users, label: "15+ Teams", description: "Led & Collaborated" },
-  { icon: Star, label: "Web3 Expert", description: "Blockchain Specialist" }
+  { icon: Star, label: "Web3 & 3D", description: "dApps to Three.js" }
 ]
 
 const techStack = [
@@ -85,7 +85,7 @@ export default function About() {
                     <CardTitle className="text-2xl text-white">
                       Vikas Kashyap
                     </CardTitle>
-                    <p className="text-purple-300 font-medium">Frontend Lead & Web3 Developer</p>
+                    <p className="text-purple-300 font-medium">Front-End Lead & Full-Stack Engineer</p>
                     <div className="flex items-center gap-2 mt-2">
                       <Building2 className="w-4 h-4 text-blue-400" />
                       <span className="text-sm text-gray-400">Natuvion GmbH</span>
@@ -104,10 +104,11 @@ export default function About() {
                       My Journey
                     </h4>
                     <p className="text-gray-300 leading-relaxed">
-                      As a seasoned web development professional with a <span className="text-purple-300 font-medium">decade of industry experience</span>,
-                      I specialize in crafting exceptional digital experiences. My expertise spans from traditional web development and
-                      cutting-edge <span className="text-blue-300 font-medium">Web3 technologies</span> to enterprise products — I currently
-                      build data-transformation software at <span className="text-green-300 font-medium">Natuvion</span> in Berlin.
+                      For over <span className="text-purple-300 font-medium">13 years</span> I&apos;ve been crafting exceptional
+                      front-end experiences — from Angular SPAs and 3D interfaces with Three.js to modern{" "}
+                      <span className="text-blue-300 font-medium">React and Next.js</span> architectures. Along the way I&apos;ve led
+                      teams, built <span className="text-blue-300 font-medium">Web3 dApps</span>, and gone full-stack with Node.js —
+                      today I build data-transformation software at <span className="text-green-300 font-medium">Natuvion</span> in Berlin.
                     </p>
                   </div>
                   
@@ -221,7 +222,7 @@ export default function About() {
                     <Calendar className="w-5 h-5 text-orange-400 group-hover:scale-110 transition-transform" />
                     <div>
                       <p className="text-xs text-gray-400 uppercase tracking-wide">Experience</p>
-                      <p className="text-white font-medium">10+ Years</p>
+                      <p className="text-white font-medium">13+ Years</p>
                     </div>
                   </div>
 

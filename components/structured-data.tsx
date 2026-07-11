@@ -5,8 +5,8 @@ export default function StructuredData() {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Vikas Kashyap",
-    "jobTitle": "Frontend Lead & Web3 Developer",
-    "description": "Experienced Frontend Lead & Web3 Developer with 10+ years expertise in React.js, Next.js, TypeScript, Solana, Ethereum blockchain technologies.",
+    "jobTitle": "Senior Software Engineer",
+    "description": "Front-End Lead & Full-Stack Engineer with 13+ years expertise in React.js, Next.js, and TypeScript — from Web3 dApps to enterprise data platforms.",
     "url": "https://vik-portfolio-ecru.vercel.app",
     "image": "https://vik-portfolio-ecru.vercel.app/main.JPG",
     "email": "kashyapvikas20@gmail.com",
@@ -54,7 +54,7 @@ export default function StructuredData() {
         "Blockchain Development",
         "Team Leadership"
       ],
-      "experienceRequirements": "10+ years"
+      "experienceRequirements": "13+ years"
     },
     "sameAs": [
       "https://www.linkedin.com/in/vikashyap2020",
@@ -62,11 +62,7 @@ export default function StructuredData() {
     ],
     "availableLanguage": ["English"],
     "nationality": "Indian",
-    "workLocation": "Berlin, Germany",
-    "seeks": {
-      "@type": "Demand",
-      "description": "Frontend Lead and Web3 Developer opportunities"
-    }
+    "workLocation": "Berlin, Germany"
   }
 
   return (

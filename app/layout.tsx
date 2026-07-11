@@ -18,10 +18,10 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: {
-    default: "Vikas Kashyap - Frontend Lead & Web3 Developer | Berlin",
+    default: "Vikas Kashyap - Front-End Lead & Full-Stack Engineer | Berlin",
     template: "%s | Vikas Kashyap - Frontend Developer"
   },
-  description: "Experienced Frontend Lead & Web3 Developer in Berlin with 10+ years expertise in React.js, Next.js, TypeScript, Solana, Ethereum. Currently building enterprise data-transformation products at Natuvion GmbH.",
+  description: "Front-End Lead & Full-Stack Engineer in Berlin with 13+ years expertise in React.js, Next.js, and TypeScript — from Web3 dApps to enterprise platforms. Currently building data-transformation products at Natuvion GmbH.",
   keywords: [
     "Frontend Developer",
     "Web3 Developer", 
@@ -60,22 +60,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://vik-portfolio-ecru.vercel.app",
-    title: "Vikas Kashyap - Frontend Lead & Web3 Developer | Berlin",
-    description: "Experienced Frontend Lead & Web3 Developer in Berlin with 10+ years expertise in React.js, Next.js, TypeScript, Solana, Ethereum. Available for new opportunities.",
+    title: "Vikas Kashyap - Front-End Lead & Full-Stack Engineer | Berlin",
+    description: "Front-End Lead & Full-Stack Engineer in Berlin with 13+ years expertise in React.js, Next.js, and TypeScript — from Web3 dApps to enterprise platforms.",
     siteName: "Vikas Kashyap Portfolio",
     images: [
       {
         url: "https://vik-portfolio-ecru.vercel.app/main.JPG",
         width: 1200,
         height: 630,
-        alt: "Vikas Kashyap - Frontend Lead & Web3 Developer",
+        alt: "Vikas Kashyap - Front-End Lead & Full-Stack Engineer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vikas Kashyap - Frontend Lead & Web3 Developer",
-    description: "Experienced Frontend Lead & Web3 Developer in Berlin with 10+ years expertise in React.js, Next.js, TypeScript, Web3 technologies.",
+    title: "Vikas Kashyap - Front-End Lead & Full-Stack Engineer",
+    description: "Front-End Lead & Full-Stack Engineer in Berlin with 13+ years expertise in React.js, Next.js, and TypeScript.",
     images: ["https://vik-portfolio-ecru.vercel.app/main.JPG"],
     creator: "@vikashyap",
   },

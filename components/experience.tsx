@@ -8,7 +8,7 @@ import { Calendar, MapPin } from "lucide-react"
 
 const experiences = [
   {
-    title: "Senior Full-Stack Software Engineer",
+    title: "Senior Software Engineer",
     company: "Natuvion",
     logo: "/logos/natuvion.png",
     location: "Berlin",
@@ -28,15 +28,15 @@ const experiences = [
     company: "Tenderize",
     logo: "/logos/tenderize.png",
     location: "Berlin",
-    period: "Oct 2023 - May 2026",
+    period: "Oct 2023 - Apr 2026",
     description:
-      "Leading front-end development for Web3 applications, specializing in Ethereum and Solana blockchain integrations. Developing advanced dApps with high performance and user-friendly interfaces.",
-    technologies: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "Wagmi", "Viem", "Solana Web3.js", "The Graph"],
+      "Led implementation of user-facing flows with Next.js, React, and TypeScript, prioritizing performance and responsive UI. Built lightweight Node.js/PostgreSQL backend services aggregating on-chain and off-chain data, and integrated smart contracts with viem, ethers, and wagmi.",
+    technologies: ["Next.js", "React.js", "TypeScript", "Node.js", "PostgreSQL", "Wagmi", "Viem", "The Graph"],
     highlights: [
-      "Ethereum Integration: Token management and smart contract interactions",
-      "Solana Integration: On-chain program interactions and state management",
-      "Data Indexing: Real-time TVL and transaction volume analytics",
-      "Performance Optimization: Code splitting and lazy loading implementation",
+      "User-facing staking flows with Next.js, React, and TypeScript",
+      "Node.js + PostgreSQL services aggregating on-chain and off-chain data",
+      "The Graph indexing powering real-time rewards and analytics dashboards",
+      "SDKs and strongly-typed client libraries for internal tools and ecosystem partners",
     ],
   },
   {
@@ -62,13 +62,13 @@ const experiences = [
     location: "Gurgaon",
     period: "May 2017 - Jul 2018",
     description:
-      "Specialized in building interactive 3D web applications using Three.js within React SPAs. Streamlined build processes and led Agile development practices.",
-    technologies: ["Three.js", "React.js", "JavaScript", "FlowType", "Webpack", "Python"],
+      "Specialized in building interactive 3D web applications using Three.js within React SPAs, with Node.js & Express backend services. Streamlined build processes and led Agile development practices.",
+    technologies: ["Three.js", "React.js", "Node.js", "Express", "FlowType", "Webpack", "Python"],
     highlights: [
       "Immersive 3D layouts with Three.js in React SPA",
+      "Backend services with Node.js & Express",
       "SEO-friendly page generation with Python scripts",
       "Agile development leadership with sprint meetings",
-      "Performance optimization with Webpack",
     ],
   },
   {
@@ -85,6 +85,35 @@ const experiences = [
       "Real-time data updates with WebSockets and Web Workers",
       "High-performance database query optimization",
       "Build automation with Grunt, Bower, and Yeoman",
+    ],
+  },
+  {
+    title: "Frontend Developer",
+    company: "Tata Consultancy Services",
+    logo: "/logos/tcs.png",
+    location: "Gurgaon",
+    period: "May 2014 - Jan 2015",
+    description:
+      "Front-end development for the McKinsey & Company Home client — a responsive Angular.js single-page application with rich data visualization.",
+    technologies: ["Angular.js", "HTML5", "CSS3", "Sass", "Bootstrap", "D3.js", "Highcharts"],
+    highlights: [
+      "Single Page Application with Angular.js 1.x",
+      "Chart-based applications with Highcharts and D3",
+      "Responsive design with HTML5, CSS3, media queries, and Sass",
+    ],
+  },
+  {
+    title: "Frontend Developer",
+    company: "Grange Management Services",
+    location: "New Delhi",
+    period: "Jan 2013 - Apr 2014",
+    description:
+      "Full-stack development of CMS websites with C#/ASP.NET, JavaScript/jQuery form validation, and SQL Server — including web services for XML and JSON.",
+    technologies: ["JavaScript", "jQuery", "C#", "ASP.NET", "SQL Server"],
+    highlights: [
+      "CMS website development with C# and ASP.NET",
+      "Web services accepting and generating XML and JSON",
+      "Dynamic server pages and form validation with JavaScript/jQuery",
     ],
   },
 ]
@@ -117,15 +146,23 @@ export default function Experience() {
                 <CardHeader>
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                     <div className="flex items-center gap-4">
-                      <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-white/90 border border-white/20 p-2 flex items-center justify-center overflow-hidden">
-                        <Image
-                          src={exp.logo}
-                          alt={`${exp.company} logo`}
-                          width={40}
-                          height={40}
-                          className="object-contain"
-                        />
-                      </div>
+                      {exp.logo ? (
+                        <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-white/90 border border-white/20 p-2 flex items-center justify-center overflow-hidden">
+                          <Image
+                            src={exp.logo}
+                            alt={`${exp.company} logo`}
+                            width={40}
+                            height={40}
+                            className="object-contain"
+                          />
+                        </div>
+                      ) : (
+                        <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500/30 to-blue-500/30 border border-white/20 flex items-center justify-center">
+                          <span className="font-display text-xl font-bold text-white">
+                            {exp.company.charAt(0)}
+                          </span>
+                        </div>
+                      )}
                       <div>
                         <CardTitle className="text-2xl text-white">{exp.title}</CardTitle>
                         <p className="text-xl text-purple-400 font-semibold">{exp.company}</p>

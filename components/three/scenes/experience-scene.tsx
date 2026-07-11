@@ -6,7 +6,7 @@ import * as THREE from "three"
 import { useScrollStore } from "@/lib/scroll-store"
 import { presence, clamp01, PALETTE } from "../shared/scene-utils"
 
-const MILESTONES = 5 // Natuvion, Tenderize, Snubes, Ticketmaster, Jade Global
+const MILESTONES = 7 // Natuvion, Tenderize, Snubes, Ticketmaster, Jade Global, TCS, Grange
 
 // A glowing helical timeline; one pulsing milestone marker per employer.
 export default function ExperienceScene() {
