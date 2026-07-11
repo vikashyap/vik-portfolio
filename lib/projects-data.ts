@@ -4,10 +4,8 @@ export interface Project {
   tech: string[]
   href?: string
   accent: string // tailwind gradient classes for the card header
-  placeholder?: boolean
 }
 
-// Placeholder entries can be freely edited/replaced with real case studies.
 export const PROJECTS: Project[] = [
   {
     title: "Data Conversion Suite (DCS)",
@@ -34,19 +32,18 @@ export const PROJECTS: Project[] = [
     accent: "from-violet-500 to-pink-500",
   },
   {
-    title: "Web3 Staking Dashboard",
+    title: "Snubes Platform",
     description:
-      "Multi-chain staking analytics dashboard with live APR tracking, portfolio breakdowns, and transaction history.",
-    tech: ["React", "Solana Web3.js", "Ethers.js", "Recharts"],
+      "Contact-center outsourcing marketplace built as micro front-ends in a Lerna/NX monorepo — hybrid SSR/CSR Next.js apps, a Storybook design system, and GraphQL-driven CMS content.",
+    tech: ["Next.js", "Gatsby", "TypeScript", "GraphQL", "Storybook"],
+    href: "https://www.snubes.com",
     accent: "from-cyan-500 to-blue-500",
-    placeholder: true,
   },
   {
-    title: "Event Ticketing Platform",
+    title: "Ticketmaster 3D Venue Experience",
     description:
-      "High-traffic ticketing UI work at Ticketmaster scale — interactive seat maps and 3D venue previews with Three.js.",
-    tech: ["React", "Three.js", "Redux", "Node.js"],
+      "Interactive 3D venue layouts with Three.js inside a high-traffic React SPA — immersive seat exploration at Ticketmaster scale, with SEO-friendly page generation.",
+    tech: ["React", "Three.js", "Webpack", "Python"],
     accent: "from-pink-500 to-orange-500",
-    placeholder: true,
   },
 ]

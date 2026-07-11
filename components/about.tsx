@@ -82,11 +82,8 @@ export default function About() {
                     <AvatarFallback className="bg-purple-500/20 text-purple-300 text-lg font-bold">VK</AvatarFallback>
                   </Avatar>
                   <div>
-                    <CardTitle className="text-2xl text-white flex items-center gap-2">
+                    <CardTitle className="text-2xl text-white">
                       Vikas Kashyap
-                      <Badge className="bg-green-500/20 text-green-400 border-green-400/30">
-                        Available
-                      </Badge>
                     </CardTitle>
                     <p className="text-purple-300 font-medium">Frontend Lead & Web3 Developer</p>
                     <div className="flex items-center gap-2 mt-2">

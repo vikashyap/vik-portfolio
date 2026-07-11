@@ -3,7 +3,6 @@
 import { motion } from "framer-motion"
 import { ArrowDown, Github, Linkedin, Mail, Sparkles, Calendar } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
 import DownloadResume from "./download-resume"
 
 export default function Hero() {
@@ -29,19 +28,6 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="space-y-8 min-h-screen flex flex-col justify-center"
         >
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex justify-center"
-          >
-            <Badge className="bg-gradient-to-r from-purple-500/20 to-blue-500/20 text-white border-purple-400/30 px-4 py-2 text-sm backdrop-blur-sm">
-              <Sparkles className="w-4 h-4 mr-2" />
-              Available for new opportunities
-            </Badge>
-          </motion.div>
-
           {/* Main Title */}
           <motion.h1
             initial={{ opacity: 0, scale: 0.5 }}
