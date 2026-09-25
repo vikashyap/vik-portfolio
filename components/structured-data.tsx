@@ -6,7 +6,7 @@ export default function StructuredData() {
     "@type": "Person",
     "name": "Vikas Kashyap",
     "jobTitle": "Senior Software Engineer",
-    "description": "Front-End Lead & Full-Stack Engineer with 13+ years expertise in React.js, Next.js, and TypeScript — from Web3 dApps to enterprise data platforms.",
+    "description": "Senior Software Engineer with 13+ years expertise in React.js, Next.js, and TypeScript — from Web3 dApps to enterprise data platforms.",
     "url": "https://vik-portfolio-ecru.vercel.app",
     "image": "https://vik-portfolio-ecru.vercel.app/main.JPG",
     "email": "kashyapvikas20@gmail.com",

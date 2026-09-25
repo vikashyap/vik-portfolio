@@ -9,11 +9,11 @@ web
 ## Users
 
 1. **Engineering leads and heads of front-end** (primary) who want their team to use AI coding tools well, not just install them. They arrive from LinkedIn or a referral, skim on a laptop between meetings, and decide whether to book a call.
-2. **Hiring managers and recruiters** (secondary) evaluating Vikas for Front-End Lead / senior roles. They want experience, companies, stack, and the CV.
+2. **Hiring managers and recruiters** (secondary) evaluating Vikas for senior front-end roles. They want experience, companies, stack, and the CV.
 
 ## Product Purpose
 
-Personal site of Vikas Kashyap, Front-End Lead & Full-Stack Engineer in Berlin, 13+ years. It positions him first as a practitioner who helps front-end teams use AI effectively, with his engineering career as the proof. Success: a lead books a call (Calendly) about AI enablement, or a hiring manager downloads the CV / books a call.
+Personal site of Vikas Kashyap, Senior Software Engineer in Berlin, 13+ years. It positions him first as a practitioner who helps front-end teams use AI effectively, with his engineering career as the proof. Success: a lead books a call (Calendly) about AI enablement, or a hiring manager downloads the CV / books a call.
 
 ## Positioning
 

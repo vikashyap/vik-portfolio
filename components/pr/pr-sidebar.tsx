@@ -33,7 +33,7 @@ export default function PrSidebar() {
           />
           <div className="leading-tight">
             <p className="font-semibold text-ink">Vikas Kashyap</p>
-            <p className="text-ink-muted">Front-End Lead & Full-Stack Engineer</p>
+            <p className="text-ink-muted">Senior Software Engineer</p>
           </div>
         </div>
       </Row>
