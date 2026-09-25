@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-25T16:00:00+02:00",
+  "title": "Design System: Vikas Kashyap",
+  "extensions": {
+    "colorMeta": {
+      "add": { "role": "primary", "displayName": "Merge Green", "canonical": "#1a7f37" },
+      "del": { "role": "secondary", "displayName": "Removal Red", "canonical": "#cf222e" },
+      "link": { "role": "tertiary", "displayName": "Link Blue", "canonical": "#0f5bd8" },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#1f2328" },
+      "subtle": { "role": "neutral", "displayName": "Header Grey", "canonical": "#f6f8fa" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "PR Title", "purpose": "The single page title only." },
+      "code": { "displayName": "Code", "purpose": "Paths, diff lines, tokens, dates. Never decorative." }
+    },
+    "shadows": [
+      { "name": "button-hairline", "value": "0 1px 0 rgba(31,35,40,0.1)", "purpose": "Bottom edge on buttons; the only shadow." }
+    ],
+    "motion": [
+      { "name": "diff-land", "value": "clip-path inset reveal, 520ms cubic-bezier(0.16,1,0.3,1), 140ms stagger", "purpose": "Hero diff lines land once on load." },
+      { "name": "strike", "value": "background-size 0 to 100%, 420ms same easing", "purpose": "Red strike draws through removed lines." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Book a call and form submit.",
+      "html": "<button class=\"ds-btn-primary\">Book a call</button>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;border-radius:6px;border:1px solid rgba(31,35,40,0.15);background:var(--add,#1a7f37);color:#fff;font-weight:500;font-size:15px;box-shadow:0 1px 0 rgba(31,35,40,0.1);transition:background .15s}.ds-btn-primary:hover{background:var(--add-strong,#116329)}.ds-btn-primary:focus-visible{outline:2px solid var(--link,#0f5bd8);outline-offset:2px}"
+    },
+    {
+      "name": "Default Button",
+      "kind": "button",
+      "refersTo": "button-default",
+      "description": "Secondary actions such as Download CV.",
+      "html": "<button class=\"ds-btn-default\">Download CV</button>",
+      "css": ".ds-btn-default{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;border-radius:6px;border:1px solid var(--line,#d1d9e0);background:var(--subtle,#f6f8fa);color:var(--ink,#1f2328);font-weight:500;font-size:15px;box-shadow:0 1px 0 rgba(31,35,40,0.04);transition:background .15s}.ds-btn-default:hover{background:var(--inset,#eff2f5)}.ds-btn-default:focus-visible{outline:2px solid var(--link,#0f5bd8);outline-offset:2px}"
+    },
+    {
+      "name": "File Box",
+      "kind": "card",
+      "description": "The container for work, tooling, diffs.",
+      "html": "<div class=\"ds-file\"><div class=\"ds-file-head\">natuvion/data-conversion-suite</div><div class=\"ds-file-body\">Full-stack product work on the DCS platform.</div></div>",
+      "css": ".ds-file{border:1px solid var(--line,#d1d9e0);border-radius:6px;overflow:hidden}.ds-file-head{background:var(--subtle,#f6f8fa);border-bottom:1px solid var(--line,#d1d9e0);padding:8px 12px;font:500 13px 'Red Hat Mono',monospace;color:var(--ink,#1f2328)}.ds-file-body{padding:16px;font-size:15px;color:var(--ink-muted,#59636e)}"
+    },
+    {
+      "name": "Diff Line",
+      "kind": "custom",
+      "description": "Added and removed lines in the hero diff.",
+      "html": "<div class=\"ds-diff\"><div class=\"ds-del\"><span>1</span>- Roll out an AI assistant.</div><div class=\"ds-add\"><span>1</span>+ Give the AI your context.</div></div>",
+      "css": ".ds-diff{font:16px/1.7 'Red Hat Mono',monospace;border:1px solid var(--line,#d1d9e0);border-radius:6px;overflow:hidden}.ds-diff>div{padding:2px 12px 2px 0}.ds-diff span{display:inline-block;width:40px;text-align:right;padding-right:8px;margin-right:8px;font-size:12px;color:var(--ink-muted,#59636e)}.ds-del{background:var(--del-bg,#ffebe9);text-decoration:line-through;text-decoration-color:var(--del,#cf222e)}.ds-del span{background:var(--del-gutter,#ffd7d5)}.ds-add{background:var(--add-bg,#dafbe1)}.ds-add span{background:var(--add-gutter,#c6f2d0)}"
+    },
+    {
+      "name": "Label",
+      "kind": "chip",
+      "refersTo": "label",
+      "description": "PR sidebar labels.",
+      "html": "<span class=\"ds-label\">ai-enablement</span>",
+      "css": ".ds-label{display:inline-block;border:1px solid var(--add-gutter,#c6f2d0);background:var(--add-bg,#dafbe1);color:var(--add-strong,#116329);border-radius:999px;padding:0 10px;font-size:12px;font-weight:500;line-height:22px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Pull Request",
+    "overview": "The portfolio is a pull request against the visitor's team. Hype is struck red, practice lands green, and the merge box is the call to action.",
+    "keyCharacteristics": ["Code-review grammar throughout", "Colour only carries diff meaning", "Mono only for code and data", "Flat, bordered, light"],
+    "rules": [
+      { "name": "Colour means diff", "body": "Green is adopt, red is remove. Neither is decoration.", "section": "colors" },
+      { "name": "Mono is for code", "body": "Paths, lines, tokens and dates only.", "section": "typography" }
+    ],
+    "dos": ["Build new sections as review artefacts", "Keep claims factual"],
+    "donts": ["No gradients, glass or glow", "No unconfirmed stats", "No eyebrows above headings"]
+  }
+}

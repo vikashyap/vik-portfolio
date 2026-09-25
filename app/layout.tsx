@@ -1,28 +1,32 @@
 import type React from "react"
 import type { Metadata, Viewport } from "next"
-import { Inter, Space_Grotesk } from "next/font/google"
+import { Schibsted_Grotesk, Red_Hat_Mono } from "next/font/google"
 import StructuredData from "@/components/structured-data"
 import "./globals.css"
 
-const inter = Inter({
+const sans = Schibsted_Grotesk({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
 })
 
-const spaceGrotesk = Space_Grotesk({
+const mono = Red_Hat_Mono({
   subsets: ["latin"],
-  variable: "--font-display",
+  variable: "--font-mono",
   display: "swap",
 })
 
 export const metadata: Metadata = {
   title: {
-    default: "Vikas Kashyap - Front-End Lead & Full-Stack Engineer | Berlin",
-    template: "%s | Vikas Kashyap - Frontend Developer"
+    default: "Vikas Kashyap · AI enablement for front-end teams · Berlin",
+    template: "%s | Vikas Kashyap"
   },
-  description: "Front-End Lead & Full-Stack Engineer in Berlin with 13+ years expertise in React.js, Next.js, and TypeScript — from Web3 dApps to enterprise platforms. Currently building data-transformation products at Natuvion GmbH.",
+  description: "Vikas Kashyap helps front-end teams use AI well: repo context, skills and hooks, and review that catches what the model misses. Front-End Lead with 13+ years in React, Next.js and TypeScript, based in Berlin.",
   keywords: [
+    "AI for front-end teams",
+    "AI coding workflow",
+    "Claude Code",
+    "AI enablement",
     "Frontend Developer",
     "Web3 Developer", 
     "React Developer",
@@ -60,8 +64,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://vik-portfolio-ecru.vercel.app",
-    title: "Vikas Kashyap - Front-End Lead & Full-Stack Engineer | Berlin",
-    description: "Front-End Lead & Full-Stack Engineer in Berlin with 13+ years expertise in React.js, Next.js, and TypeScript — from Web3 dApps to enterprise platforms.",
+    title: "Vikas Kashyap · AI enablement for front-end teams",
+    description: "I help front-end teams use AI well. Front-End Lead with 13+ years in React, Next.js and TypeScript, based in Berlin.",
     siteName: "Vikas Kashyap Portfolio",
     images: [
       {
@@ -74,8 +78,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vikas Kashyap - Front-End Lead & Full-Stack Engineer",
-    description: "Front-End Lead & Full-Stack Engineer in Berlin with 13+ years expertise in React.js, Next.js, and TypeScript.",
+    title: "Vikas Kashyap · AI enablement for front-end teams",
+    description: "I help front-end teams use AI well. Front-End Lead with 13+ years in React, Next.js and TypeScript.",
     images: ["https://vik-portfolio-ecru.vercel.app/main.JPG"],
     creator: "@vikashyap",
   },
@@ -95,7 +99,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
+  themeColor: "#ffffff",
 }
 
 export default function RootLayout({
@@ -104,14 +108,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${spaceGrotesk.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${sans.variable} ${mono.variable}`}>
       <head>
         <StructuredData />
       </head>
       <body suppressHydrationWarning={true}>
         <a
-          href="#home"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-purple-600 focus:text-white focus:rounded-md"
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-ink focus:text-canvas focus:rounded-md"
         >
           Skip to content
         </a>

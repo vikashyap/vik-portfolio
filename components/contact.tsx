@@ -1,215 +1,118 @@
 "use client"
 
-import { motion } from "framer-motion"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin, Linkedin, Github, Send, CheckCircle, AlertCircle } from "lucide-react"
-import { useForm, ValidationError } from '@formspree/react'
+import { AlertCircle, CalendarDays, CheckCircle2, GitMerge, Loader2, Mail } from "lucide-react"
+import { useForm, ValidationError } from "@formspree/react"
+import { CALENDLY_URL, EMAIL } from "@/lib/content"
+import DownloadResume from "./download-resume"
+import { buttonClass } from "./pr/button-styles"
+
+const field =
+  "w-full rounded-md border border-line bg-subtle px-3 py-2 text-[15px] text-ink placeholder:text-ink-muted transition-colors focus:border-link focus:bg-canvas focus:outline-none focus:ring-2 focus:ring-[rgba(15,91,216,0.25)]"
 
 export default function Contact() {
   const [state, handleSubmit] = useForm("mwprpjkr")
+  const hasError = state.errors && Object.keys(state.errors).length > 0
 
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-black/20">
-      <div className="max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">Get In Touch</h2>
-          <div className="w-24 h-1 bg-purple-400 mx-auto"></div>
-          <p className="text-gray-300 mt-6 max-w-2xl mx-auto">
-            Ready to collaborate on your next project? Let's discuss how we can bring your ideas to life.
-          </p>
-        </motion.div>
-
-        <div className="grid md:grid-cols-2 gap-12">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="space-y-8"
-          >
+    <section id="contact" aria-labelledby="contact-title" className="pb-24 pt-20 md:pt-24">
+      <div className="flex gap-3 sm:gap-4">
+        <span className="hidden size-10 shrink-0 items-center justify-center rounded-full bg-add text-white sm:flex">
+          <GitMerge className="size-5" aria-hidden />
+        </span>
+        <div className="min-w-0 flex-1 overflow-hidden rounded-md border border-line">
+          <div className="flex gap-3 border-b border-line px-4 py-5 sm:px-5">
+            <CheckCircle2 className="mt-1 size-5 shrink-0 text-add" aria-hidden />
             <div>
-              <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
-              <div className="space-y-4">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-purple-400/20 rounded-full flex items-center justify-center">
-                    <Mail className="h-6 w-6 text-purple-400" />
-                  </div>
-                  <div>
-                    <p className="text-gray-400 text-sm">Email</p>
-                    <p className="text-white">kashyapvikas20@gmail.com</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-purple-400/20 rounded-full flex items-center justify-center">
-                    <Phone className="h-6 w-6 text-purple-400" />
-                  </div>
-                  <div>
-                    <p className="text-gray-400 text-sm">Phone</p>
-                    <p className="text-white">+49 176 29804709</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-purple-400/20 rounded-full flex items-center justify-center">
-                    <MapPin className="h-6 w-6 text-purple-400" />
-                  </div>
-                  <div>
-                    <p className="text-gray-400 text-sm">Location</p>
-                    <p className="text-white">Berlin, Germany</p>
-                  </div>
-                </div>
-              </div>
+              <h2 id="contact-title" className="text-balance text-[1.5rem] font-semibold leading-tight tracking-[-0.02em] sm:text-[1.75rem]">
+                Ready to merge
+              </h2>
+              <p className="mt-2 max-w-[60ch] text-pretty text-[16px] leading-relaxed text-ink-muted">
+                Book a call about your team&apos;s AI setup, or about a Front-End Lead role. No conflicts with your main
+                branch.
+              </p>
             </div>
-
-            <div>
-              <h3 className="text-2xl font-bold text-white mb-6">Follow Me</h3>
-              <div className="flex gap-4">
-                <Button
-                  variant="outline"
-                  size="icon"
-                  className="rounded-full border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white bg-transparent"
-                  asChild
-                >
-                  <a href="https://www.linkedin.com/in/vikashyap2020" target="_blank" rel="noopener noreferrer">
-                    <Linkedin className="h-5 w-5" />
-                  </a>
-                </Button>
-
-                <Button
-                  variant="outline"
-                  size="icon"
-                  className="rounded-full border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white bg-transparent"
-                  asChild
-                >
-                  <a href="https://github.com/vikashyap" target="_blank" rel="noopener noreferrer">
-                    <Github className="h-5 w-5" />
-                  </a>
-                </Button>
-              </div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <Card className="bg-white/5 backdrop-blur-md border-white/10">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-white mb-6">Send Message</h3>
-                
-                {/* Success Message */}
-                {state.succeeded && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="mb-6 p-4 bg-green-500/20 border border-green-500/30 rounded-lg flex items-center gap-3"
-                  >
-                    <CheckCircle className="h-5 w-5 text-green-400" />
-                    <p className="text-green-300">Thank you! Your message has been sent successfully.</p>
-                  </motion.div>
-                )}
-
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <Input
-                        id="name"
-                        name="name"
-                        type="text"
-                        placeholder="Your Name"
-                        required
-                        className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-purple-400"
-                      />
-                      <ValidationError 
-                        prefix="Name" 
-                        field="name"
-                        errors={state.errors}
-                        className="text-red-400 text-sm mt-1"
-                      />
-                    </div>
-                    <div>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        placeholder="Your Email"
-                        required
-                        className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-purple-400"
-                      />
-                      <ValidationError 
-                        prefix="Email" 
-                        field="email"
-                        errors={state.errors}
-                        className="text-red-400 text-sm mt-1"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <Input
-                      id="subject"
-                      name="subject"
-                      type="text"
-                      placeholder="Subject"
-                      required
-                      className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-purple-400"
-                    />
-                    <ValidationError 
-                      prefix="Subject" 
-                      field="subject"
-                      errors={state.errors}
-                      className="text-red-400 text-sm mt-1"
-                    />
-                  </div>
-                  <div>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      placeholder="Your Message"
-                      rows={5}
-                      required
-                      className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-purple-400"
-                    />
-                    <ValidationError 
-                      prefix="Message" 
-                      field="message"
-                      errors={state.errors}
-                      className="text-red-400 text-sm mt-1"
-                    />
-                  </div>
-                  <Button 
-                    type="submit" 
-                    disabled={state.submitting}
-                    className="w-full bg-purple-600 hover:bg-purple-700 text-white disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
-                  >
-                    {state.submitting ? (
-                      <div className="flex items-center gap-2">
-                        <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                        Sending...
-                      </div>
-                    ) : (
-                      <div className="flex items-center gap-2">
-                        <Send className="h-4 w-4" />
-                        Send Message
-                      </div>
-                    )}
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
-          </motion.div>
+          </div>
+          <div className="flex flex-wrap items-center gap-3 bg-subtle px-4 py-4 sm:px-5">
+            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className={buttonClass("primary", "lg")}>
+              <CalendarDays />
+              Book a call
+            </a>
+            <DownloadResume className={buttonClass("default", "lg")} />
+            <a href={`mailto:${EMAIL}`} className="inline-flex items-center gap-1.5 px-1 text-[15px] text-link hover:underline">
+              <Mail className="size-4" aria-hidden />
+              {EMAIL}
+            </a>
+          </div>
         </div>
+      </div>
+
+      {/* Comment box */}
+      <div className="mt-8 flex gap-3 sm:gap-4">
+        <span aria-hidden className="hidden w-10 shrink-0 sm:block" />
+        <form onSubmit={handleSubmit} className="min-w-0 flex-1 overflow-hidden rounded-md border border-line">
+          <div className="border-b border-line bg-subtle px-4 py-2.5">
+            <h3 className="text-sm font-semibold text-ink">Or leave a message</h3>
+          </div>
+          <div className="space-y-3 p-4">
+            {state.succeeded ? (
+              <p role="status" className="flex items-start gap-2 rounded-md border border-add-gutter bg-add-bg px-3 py-3 text-[15px] text-add-strong">
+                <CheckCircle2 className="mt-0.5 size-4 shrink-0" aria-hidden />
+                Thanks, your message is in. I'll get back to you by email.
+              </p>
+            ) : (
+              <>
+                <div className="grid gap-3 sm:grid-cols-2">
+                  <div>
+                    <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-ink">
+                      Name
+                    </label>
+                    <input id="name" name="name" type="text" autoComplete="name" required className={field} />
+                    <ValidationError prefix="Name" field="name" errors={state.errors} className="mt-1 text-sm text-del" />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-ink">
+                      Email
+                    </label>
+                    <input id="email" name="email" type="email" autoComplete="email" required className={field} />
+                    <ValidationError prefix="Email" field="email" errors={state.errors} className="mt-1 text-sm text-del" />
+                  </div>
+                </div>
+                <div>
+                  <label htmlFor="subject" className="mb-1.5 block text-sm font-medium text-ink">
+                    Subject
+                  </label>
+                  <input
+                    id="subject"
+                    name="subject"
+                    type="text"
+                    required
+                    placeholder="AI setup for our team, a role, something else"
+                    className={field}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-ink">
+                    Message
+                  </label>
+                  <textarea id="message" name="message" rows={5} required className={`${field} resize-y`} />
+                  <ValidationError prefix="Message" field="message" errors={state.errors} className="mt-1 text-sm text-del" />
+                </div>
+                {hasError && (
+                  <p role="alert" className="flex items-start gap-2 text-sm text-del">
+                    <AlertCircle className="mt-0.5 size-4 shrink-0" aria-hidden />
+                    The message did not send. Check the fields above, or email me directly at {EMAIL}.
+                  </p>
+                )}
+                <div className="flex justify-end pt-1">
+                  <button type="submit" disabled={state.submitting} className={buttonClass("primary", "md")}>
+                    {state.submitting && <Loader2 className="animate-spin" />}
+                    {state.submitting ? "Sending" : "Send message"}
+                  </button>
+                </div>
+              </>
+            )}
+          </div>
+        </form>
       </div>
     </section>
   )
