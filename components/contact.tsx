@@ -7,7 +7,7 @@ import DownloadResume from "./download-resume"
 import { buttonClass } from "./pr/button-styles"
 
 const field =
-  "w-full rounded-md border border-line bg-subtle px-3 py-2 text-[15px] text-ink placeholder:text-ink-muted transition-colors focus:border-link focus:bg-canvas focus:outline-none focus:ring-2 focus:ring-[rgba(15,91,216,0.25)]"
+  "w-full rounded-md border border-line bg-subtle px-3 py-2 text-[15px] text-ink placeholder:text-ink-muted transition-colors focus:border-link focus:bg-canvas focus:outline-none focus:ring-2 focus:ring-[var(--ring-soft)]"
 
 export default function Contact() {
   const [state, handleSubmit] = useForm("mwprpjkr")
@@ -16,7 +16,7 @@ export default function Contact() {
   return (
     <section id="contact" aria-labelledby="contact-title" className="pb-24 pt-20 md:pt-24">
       <div className="flex gap-3 sm:gap-4">
-        <span className="hidden size-10 shrink-0 items-center justify-center rounded-full bg-add text-white sm:flex">
+        <span className="hidden size-10 shrink-0 items-center justify-center rounded-full bg-add-solid text-white sm:flex">
           <GitMerge className="size-5" aria-hidden />
         </span>
         <div className="min-w-0 flex-1 overflow-hidden rounded-md border border-line">

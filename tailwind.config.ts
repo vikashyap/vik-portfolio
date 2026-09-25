@@ -22,7 +22,8 @@ const config: Config = {
   			inset: 'var(--inset)',
   			line: {
   				DEFAULT: 'var(--line)',
-  				soft: 'var(--line-soft)'
+  				soft: 'var(--line-soft)',
+  				hover: 'var(--line-hover)'
   			},
   			ink: {
   				DEFAULT: 'var(--ink)',
@@ -32,6 +33,8 @@ const config: Config = {
   			add: {
   				DEFAULT: 'var(--add)',
   				strong: 'var(--add-strong)',
+  				solid: 'var(--add-solid)',
+  				'solid-hover': 'var(--add-solid-hover)',
   				bg: 'var(--add-bg)',
   				gutter: 'var(--add-gutter)'
   			},
@@ -41,6 +44,12 @@ const config: Config = {
   				gutter: 'var(--del-gutter)'
   			},
   			attention: 'var(--attention-bg)',
+  			accentchip: {
+  				bg: 'var(--accent-bg)',
+  				fg: 'var(--accent-fg)',
+  				border: 'var(--accent-border)'
+  			},
+  			'logo-bg': 'var(--logo-bg)',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
