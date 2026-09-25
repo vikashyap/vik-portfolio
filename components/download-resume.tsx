@@ -1,111 +1,61 @@
 "use client"
 
-import React, { useState } from 'react'
-import { Button } from '@/components/ui/button'
-import { Download, FileText, Loader2 } from 'lucide-react'
+import { useState } from "react"
+import { Download, Loader2 } from "lucide-react"
 
 interface DownloadResumeProps {
-  variant?: 'default' | 'outline' | 'ghost'
-  size?: 'default' | 'sm' | 'lg'
   className?: string
 }
 
-const DownloadResume: React.FC<DownloadResumeProps> = ({ 
-  variant = 'default', 
-  size = 'default',
-  className = '' 
-}) => {
+function triggerDownload(blob: Blob, filename: string) {
+  const url = URL.createObjectURL(blob)
+  const link = document.createElement("a")
+  link.href = url
+  link.download = filename
+  document.body.appendChild(link)
+  link.click()
+  setTimeout(() => {
+    link.remove()
+    URL.revokeObjectURL(url)
+  }, 100)
+}
+
+export default function DownloadResume({ className = "" }: DownloadResumeProps) {
   const [isGenerating, setIsGenerating] = useState(false)
+  const [failed, setFailed] = useState(false)
 
   const handleDownload = async () => {
+    setIsGenerating(true)
+    setFailed(false)
     try {
-      setIsGenerating(true)
-      console.log('Starting PDF generation...')
-      
-      // Check if we're in the browser
-      if (typeof window === 'undefined') {
-        console.error('PDF generation only works in browser environment')
-        return
-      }
-      
       try {
-        // Try react-pdf first — loaded on demand so the heavy PDF libraries
-        // stay out of the initial page bundle
-        console.log('Trying react-pdf...')
+        // Loaded on demand so the PDF libraries stay out of the initial bundle
         const [{ pdf }, { default: ResumePDF }] = await Promise.all([
-          import('@react-pdf/renderer'),
-          import('./resume-pdf'),
+          import("@react-pdf/renderer"),
+          import("./resume-pdf"),
         ])
-        const pdfInstance = pdf(<ResumePDF />)
-        const blob = await pdfInstance.toBlob()
-        
+        const blob = await pdf(<ResumePDF />).toBlob()
         if (blob && blob.size > 0) {
-          console.log('React-PDF blob generated successfully:', blob)
-          
-          // Create download link
-          const url = URL.createObjectURL(blob)
-          const link = document.createElement('a')
-          link.href = url
-          link.download = 'Vikas_Kashyap_Resume.pdf'
-          link.style.display = 'none'
-          
-          // Trigger download
-          document.body.appendChild(link)
-          console.log('Triggering download...')
-          link.click()
-          
-          // Cleanup with a small delay
-          setTimeout(() => {
-            if (document.body.contains(link)) {
-              document.body.removeChild(link)
-            }
-            URL.revokeObjectURL(url)
-            console.log('Cleanup completed')
-          }, 100)
-          
+          triggerDownload(blob, "Vikas_Kashyap_CV.pdf")
           return
         }
       } catch (reactPdfError) {
-        console.warn('React-PDF failed, trying jsPDF fallback:', reactPdfError)
+        console.warn("react-pdf failed, falling back to jsPDF:", reactPdfError)
       }
-      
-      // Fallback to jsPDF
-      console.log('Using jsPDF fallback...')
-      const { generateJsPDFResume } = await import('./jspdf-resume')
-      const doc = generateJsPDFResume()
-      doc.save('Vikas_Kashyap_Resume.pdf')
-      console.log('jsPDF download triggered')
-      
+      const { generateJsPDFResume } = await import("./jspdf-resume")
+      generateJsPDFResume().save("Vikas_Kashyap_CV.pdf")
     } catch (error) {
-      console.error('Error generating PDF:', error)
-      const message = error instanceof Error ? error.message : String(error)
-      alert(`Error generating PDF: ${message}. Please try again or contact support.`)
+      console.error("Error generating PDF:", error)
+      setFailed(true)
     } finally {
       setIsGenerating(false)
     }
   }
 
   return (
-    <Button
-      onClick={handleDownload}
-      disabled={isGenerating}
-      variant={variant}
-      size={size}
-      className={className}
-    >
-      {isGenerating ? (
-        <>
-          <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-          Generating PDF...
-        </>
-      ) : (
-        <>
-          <Download className="w-4 h-4 mr-2" />
-          Download Resume
-        </>
-      )}
-    </Button>
+    <button type="button" onClick={handleDownload} disabled={isGenerating} className={className}>
+      {isGenerating ? <Loader2 className="animate-spin" aria-hidden /> : <Download aria-hidden />}
+      {isGenerating ? "Preparing CV" : failed ? "Retry CV download" : "Download CV"}
+    </button>
   )
 }
-
-export default DownloadResume

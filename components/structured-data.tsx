@@ -35,6 +35,7 @@ export default function StructuredData() {
       "Solana",
       "Ethereum",
       "Frontend Development",
+      "AI-assisted software development",
       "dApp Development",
       "Tailwind CSS",
       "Node.js"
