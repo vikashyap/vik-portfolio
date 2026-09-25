@@ -1,30 +1,100 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-25T16:00:00+02:00",
+  "generatedAt": "2026-09-25T17:00:00+02:00",
   "title": "Design System: Vikas Kashyap",
   "extensions": {
     "colorMeta": {
-      "add": { "role": "primary", "displayName": "Merge Green", "canonical": "#1a7f37" },
-      "del": { "role": "secondary", "displayName": "Removal Red", "canonical": "#cf222e" },
-      "link": { "role": "tertiary", "displayName": "Link Blue", "canonical": "#0f5bd8" },
-      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#1f2328" },
-      "subtle": { "role": "neutral", "displayName": "Header Grey", "canonical": "#f6f8fa" }
+      "add": {
+        "role": "primary",
+        "displayName": "Merge Green",
+        "canonical": "#1a7f37"
+      },
+      "del": {
+        "role": "secondary",
+        "displayName": "Removal Red",
+        "canonical": "#cf222e"
+      },
+      "link": {
+        "role": "tertiary",
+        "displayName": "Link Blue",
+        "canonical": "#0f5bd8"
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#1f2328"
+      },
+      "subtle": {
+        "role": "neutral",
+        "displayName": "Header Grey",
+        "canonical": "#f6f8fa"
+      }
     },
     "typographyMeta": {
-      "display": { "displayName": "PR Title", "purpose": "The single page title only." },
-      "code": { "displayName": "Code", "purpose": "Paths, diff lines, tokens, dates. Never decorative." }
+      "display": {
+        "displayName": "PR Title",
+        "purpose": "The single page title only."
+      },
+      "code": {
+        "displayName": "Code",
+        "purpose": "Paths, diff lines, tokens, dates. Never decorative."
+      }
     },
     "shadows": [
-      { "name": "button-hairline", "value": "0 1px 0 rgba(31,35,40,0.1)", "purpose": "Bottom edge on buttons; the only shadow." }
+      {
+        "name": "button-hairline",
+        "value": "0 1px 0 rgba(31,35,40,0.1)",
+        "purpose": "Bottom edge on buttons; the only shadow."
+      }
     ],
     "motion": [
-      { "name": "diff-land", "value": "clip-path inset reveal, 520ms cubic-bezier(0.16,1,0.3,1), 140ms stagger", "purpose": "Hero diff lines land once on load." },
-      { "name": "strike", "value": "background-size 0 to 100%, 420ms same easing", "purpose": "Red strike draws through removed lines." }
+      {
+        "name": "diff-land",
+        "value": "clip-path inset reveal, 520ms cubic-bezier(0.16,1,0.3,1), 140ms stagger",
+        "purpose": "Hero diff lines land once on load."
+      },
+      {
+        "name": "strike",
+        "value": "background-size 0 to 100%, 420ms same easing",
+        "purpose": "Red strike draws through removed lines."
+      }
     ],
     "breakpoints": [
-      { "name": "sm", "value": "640px" },
-      { "name": "md", "value": "768px" },
-      { "name": "lg", "value": "1024px" }
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ],
+    "themes": [
+      {
+        "name": "dark",
+        "trigger": "prefers-color-scheme: dark",
+        "tokens": {
+          "canvas": "#0d1117",
+          "subtle": "#151b23",
+          "inset": "#212830",
+          "line": "#3d444d",
+          "ink": "#f0f6fc",
+          "ink-muted": "#9198a1",
+          "link": "#4493f8",
+          "add": "#3fb950",
+          "add-solid": "#238636",
+          "add-bg": "#12261e",
+          "add-gutter": "#163620",
+          "del": "#f85149",
+          "del-bg": "#25171c",
+          "del-gutter": "#42201f",
+          "tab-active": "#f78166"
+        }
+      }
     ]
   },
   "components": [
@@ -70,12 +140,32 @@
   "narrative": {
     "northStar": "The Pull Request",
     "overview": "The portfolio is a pull request against the visitor's team. Hype is struck red, practice lands green, and the merge box is the call to action.",
-    "keyCharacteristics": ["Code-review grammar throughout", "Colour only carries diff meaning", "Mono only for code and data", "Flat, bordered, light"],
-    "rules": [
-      { "name": "Colour means diff", "body": "Green is adopt, red is remove. Neither is decoration.", "section": "colors" },
-      { "name": "Mono is for code", "body": "Paths, lines, tokens and dates only.", "section": "typography" }
+    "keyCharacteristics": [
+      "Code-review grammar throughout",
+      "Colour only carries diff meaning",
+      "Mono only for code and data",
+      "Flat, bordered, light"
     ],
-    "dos": ["Build new sections as review artefacts", "Keep claims factual"],
-    "donts": ["No gradients, glass or glow", "No unconfirmed stats", "No eyebrows above headings"]
+    "rules": [
+      {
+        "name": "Colour means diff",
+        "body": "Green is adopt, red is remove. Neither is decoration.",
+        "section": "colors"
+      },
+      {
+        "name": "Mono is for code",
+        "body": "Paths, lines, tokens and dates only.",
+        "section": "typography"
+      }
+    ],
+    "dos": [
+      "Build new sections as review artefacts",
+      "Keep claims factual"
+    ],
+    "donts": [
+      "No gradients, glass or glow",
+      "No unconfirmed stats",
+      "No eyebrows above headings"
+    ]
   }
 }

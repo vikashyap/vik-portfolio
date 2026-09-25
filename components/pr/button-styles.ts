@@ -8,9 +8,9 @@ const base =
 
 const variants: Record<Variant, string> = {
   primary:
-    "border-[rgba(31,35,40,0.15)] bg-add text-white shadow-[0_1px_0_rgba(31,35,40,0.1)] hover:bg-add-strong",
+    "border-[var(--btn-border)] bg-add-solid text-white shadow-[0_1px_0_var(--btn-shadow)] hover:bg-add-solid-hover",
   default:
-    "border-line bg-subtle text-ink shadow-[0_1px_0_rgba(31,35,40,0.04)] hover:bg-inset hover:border-[#c4ccd4]",
+    "border-line bg-subtle text-ink shadow-[0_1px_0_var(--btn-shadow)] hover:bg-inset hover:border-line-hover",
 }
 
 const sizes: Record<Size, string> = {

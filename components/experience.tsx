@@ -50,7 +50,7 @@ export default function Experience() {
                     alt={`${r.company} logo`}
                     width={64}
                     height={64}
-                    className="size-9 shrink-0 rounded-md border border-line-soft bg-canvas object-contain p-1"
+                    className="size-9 shrink-0 rounded-md border border-line-soft bg-logo-bg object-contain p-1"
                   />
                 )}
               </div>

@@ -21,13 +21,37 @@ colors:
 typography:
   display:
     fontFamily: "Schibsted Grotesk, system-ui, sans-serif"
-    fontSize: "clamp(2.25rem, 4vw, 3.25rem)"
+    fontSize: "3.25rem"
     fontWeight: 600
     lineHeight: 1.1
     letterSpacing: "-0.025em"
   section:
     fontFamily: "Schibsted Grotesk, system-ui, sans-serif"
     fontSize: "2rem"
+    fontWeight: 600
+    lineHeight: 1.2
+    letterSpacing: "-0.02em"
+  display-sm:
+    fontFamily: "Schibsted Grotesk, system-ui, sans-serif"
+    fontSize: "2.75rem"
+    fontWeight: 600
+    lineHeight: 1.1
+    letterSpacing: "-0.025em"
+  display-xs:
+    fontFamily: "Schibsted Grotesk, system-ui, sans-serif"
+    fontSize: "2.25rem"
+    fontWeight: 600
+    lineHeight: 1.1
+    letterSpacing: "-0.025em"
+  section-sm:
+    fontFamily: "Schibsted Grotesk, system-ui, sans-serif"
+    fontSize: "1.75rem"
+    fontWeight: 600
+    lineHeight: 1.2
+    letterSpacing: "-0.02em"
+  close:
+    fontFamily: "Schibsted Grotesk, system-ui, sans-serif"
+    fontSize: "1.5rem"
     fontWeight: 600
     lineHeight: 1.2
     letterSpacing: "-0.02em"
@@ -41,9 +65,24 @@ typography:
     fontSize: "17px"
     fontWeight: 400
     lineHeight: 1.65
+  body-md:
+    fontFamily: "Schibsted Grotesk, system-ui, sans-serif"
+    fontSize: "16px"
+    fontWeight: 400
+    lineHeight: 1.6
+  body-sm:
+    fontFamily: "Schibsted Grotesk, system-ui, sans-serif"
+    fontSize: "15px"
+    fontWeight: 400
+    lineHeight: 1.6
   meta:
     fontFamily: "Schibsted Grotesk, system-ui, sans-serif"
     fontSize: "13px"
+    fontWeight: 400
+    lineHeight: 1.5
+  caption:
+    fontFamily: "Red Hat Mono, ui-monospace, monospace"
+    fontSize: "12px"
     fontWeight: 400
     lineHeight: 1.5
   code:
@@ -119,6 +158,12 @@ Restrained palette. Neutrals carry the page; diff colours carry meaning.
 ### Neutral
 - **canvas** white, **subtle** `#f6f8fa` for file headers and bars, **inset** for tokens, **line** / **line-soft** for all borders, **ink** / **ink-muted** for text.
 
+### Dark mode
+Follows the visitor's system setting through `prefers-color-scheme`; there is no toggle. The same token names get dark values in `app/globals.css`, based on GitHub's dark palette: canvas `#0d1117`, subtle `#151b23`, ink `#f0f6fc`, ink-muted `#9198a1`, link `#4493f8`.
+- Green has two roles. `add-solid` (`#238636` dark) fills buttons and the Open pill, with white text. `add` (`#3fb950` dark) is for green text and icons. In light mode both are `#1a7f37`.
+- Diff rows use deep tinted fields (`add-bg #12261e`, `del-bg #25171c`) so ink text keeps above 14:1, and line numbers keep 4.5:1 on their gutters.
+- Company logos sit on a `logo-bg` white tile in both themes, because several logos are dark ink on transparent.
+
 ### Named Rules
 - **Colour means diff.** Green is "adopt this", red is "remove this". Do not use either as decoration.
 - **One active accent.** `tab-active` coral marks the current tab underline and nothing else.
@@ -128,11 +173,11 @@ Restrained palette. Neutrals carry the page; diff colours carry meaning.
 Schibsted Grotesk for all prose and headings. Red Hat Mono only for things that are code or data: file paths, diff lines, tech tokens, dates in the commit log, skill names.
 
 ### Hierarchy
-- **display**: the PR title only, weight 600, tight tracking, with the muted `#13`.
-- **section**: section titles (`Selected work`, `Experience`).
+- **display** / **display-sm** / **display-xs**: the PR title only (52 / 44 / 36px by breakpoint), weight 600, tight tracking, with the muted `#13`.
+- **section** / **section-sm**: section titles (32px from `sm`, 28px on phones). **close**: the merge-box title.
 - **subhead**: sub-blocks inside the AI section.
-- **body** 17px for the review comment and intros; 15px for list bodies.
-- **meta** 12 to 13px for headers, counts and labels.
+- **body** 17px for the review comment and intros; **body-md** 16px for the merge-box line; **body-sm** 15px for list bodies.
+- **meta** 13px for headers, counts and labels; **caption** 12px mono for tech tokens and photo captions.
 
 ### Named Rules
 - **Mono is for code, not for mood.** If it is not a path, a line of code, a token, or a date, it is set in the sans.

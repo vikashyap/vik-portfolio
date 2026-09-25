@@ -23,14 +23,14 @@ export default function PrIntro() {
       </h1>
 
       <div className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-2 border-b border-line pb-6 text-[15px] text-ink-muted">
-        <span className="inline-flex h-8 items-center gap-1.5 rounded-full bg-add px-3 text-sm font-medium text-white">
+        <span className="inline-flex h-8 items-center gap-1.5 rounded-full bg-add-solid px-3 text-sm font-medium text-white">
           <GitPullRequest className="size-4" aria-hidden />
           Open
         </span>
         <span>
           <strong className="font-semibold text-ink">vikashyap</strong> wants to merge 13 years of front-end work
           into{" "}
-          <code className="rounded-md bg-[#ddf4ff] px-1.5 py-0.5 font-mono text-[13px] text-link">your-team:main</code>
+          <code className="rounded-md bg-accentchip-bg px-1.5 py-0.5 font-mono text-[13px] text-accentchip-fg">your-team:main</code>
         </span>
       </div>
 

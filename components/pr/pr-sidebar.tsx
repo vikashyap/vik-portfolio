@@ -4,7 +4,7 @@ import { EMAIL, GITHUB_URL, LINKEDIN_URL } from "@/lib/content"
 
 const LABELS = [
   { name: "ai-enablement", tone: "bg-add-bg text-add-strong border-add-gutter" },
-  { name: "front-end", tone: "bg-[#ddf4ff] text-[#0a4fb5] border-[#b6e3ff]" },
+  { name: "front-end", tone: "bg-accentchip-bg text-accentchip-fg border-accentchip-border" },
   { name: "react", tone: "bg-subtle text-ink border-line" },
   { name: "next.js", tone: "bg-subtle text-ink border-line" },
   { name: "typescript", tone: "bg-subtle text-ink border-line" },
@@ -53,7 +53,7 @@ export default function PrSidebar() {
             alt=""
             width={40}
             height={40}
-            className="size-5 rounded border border-line-soft object-contain"
+            className="size-5 rounded border border-line-soft bg-logo-bg object-contain p-px"
           />
           <p className="text-ink">
             Senior Software Engineer at <span className="font-semibold">Natuvion</span>
