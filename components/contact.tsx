@@ -27,7 +27,7 @@ export default function Contact() {
                 Ready to merge
               </h2>
               <p className="mt-2 max-w-[60ch] text-pretty text-[16px] leading-relaxed text-ink-muted">
-                Book a call about your team&apos;s AI setup, or about a Front-End Lead role. No conflicts with your main
+                Book a call about your team&apos;s AI setup, or about a senior front-end role. No conflicts with your main
                 branch.
               </p>
             </div>

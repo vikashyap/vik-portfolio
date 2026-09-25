@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     default: "Vikas Kashyap · AI enablement for front-end teams · Berlin",
     template: "%s | Vikas Kashyap"
   },
-  description: "Vikas Kashyap helps front-end teams use AI well: repo context, skills and hooks, and review that catches what the model misses. Front-End Lead with 13+ years in React, Next.js and TypeScript, based in Berlin.",
+  description: "Vikas Kashyap builds AI workflows for front-end teams: repo context, skills and hooks, and review that catches what the model misses. Senior Software Engineer with 13+ years in React, Next.js and TypeScript, based in Berlin.",
   keywords: [
     "AI for front-end teams",
     "AI coding workflow",
@@ -36,7 +36,6 @@ export const metadata: Metadata = {
     "Solana Developer",
     "Ethereum Developer",
     "Berlin Developer",
-    "Frontend Lead",
     "JavaScript Developer",
     "Tailwind CSS",
     "dApp Developer",
@@ -65,21 +64,21 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://vik-portfolio-ecru.vercel.app",
     title: "Vikas Kashyap · AI enablement for front-end teams",
-    description: "I help front-end teams use AI well. Front-End Lead with 13+ years in React, Next.js and TypeScript, based in Berlin.",
+    description: "Building AI workflows for front-end teams. Senior Software Engineer with 13+ years in React, Next.js and TypeScript, based in Berlin.",
     siteName: "Vikas Kashyap Portfolio",
     images: [
       {
         url: "https://vik-portfolio-ecru.vercel.app/main.JPG",
         width: 1200,
         height: 630,
-        alt: "Vikas Kashyap - Front-End Lead & Full-Stack Engineer",
+        alt: "Vikas Kashyap, Senior Software Engineer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Vikas Kashyap · AI enablement for front-end teams",
-    description: "I help front-end teams use AI well. Front-End Lead with 13+ years in React, Next.js and TypeScript.",
+    description: "Building AI workflows for front-end teams. Senior Software Engineer with 13+ years in React, Next.js and TypeScript.",
     images: ["https://vik-portfolio-ecru.vercel.app/main.JPG"],
     creator: "@vikashyap",
   },

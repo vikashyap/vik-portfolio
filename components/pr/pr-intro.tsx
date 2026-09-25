@@ -109,11 +109,11 @@ export default function PrIntro() {
           </div>
           <div className="space-y-4 px-4 py-5 text-[17px] leading-[1.65] text-ink sm:px-5">
             <p className="max-w-[62ch] text-pretty">
-              I&apos;m Vikas, a Front-End Lead in Berlin. For 13 years I&apos;ve shipped React, Next.js and TypeScript
+              I&apos;m Vikas, a Senior Software Engineer in Berlin. For 13 years I&apos;ve shipped React, Next.js and TypeScript
               at Natuvion, Tenderize, Snubes and Ticketmaster.
             </p>
             <p className="max-w-[62ch] text-pretty">
-              Today I build the AI workflows my team uses every day, and I help other front-end teams set up the same:
+              Today I build the AI workflows my team uses every day, and I mentor other front-end teams on setting up the same:
               context the agent can trust, skills that encode your standards, and review that catches what the model
               misses.
             </p>

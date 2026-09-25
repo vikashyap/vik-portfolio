@@ -1,7 +1,7 @@
 export const resumeData = {
   personalInfo: {
     name: "Vikas Kashyap",
-    title: "Front-End Lead & Full-Stack Engineer",
+    title: "Senior Software Engineer",
     location: "Berlin, Germany",
     phone: "+49 176 29804709",
     email: "kashyapvikas20@gmail.com",
@@ -10,7 +10,7 @@ export const resumeData = {
     website: "https://vik-portfolio-ecru.vercel.app"
   },
   
-  summary: "Front-End Lead & Full-Stack Engineer with 13+ years of experience crafting exceptional web experiences in React.js, Next.js, and TypeScript — from Web3 dApps to enterprise platforms. Currently building data-transformation products at Natuvion GmbH in Berlin.",
+  summary: "Senior Software Engineer with 13+ years of experience crafting exceptional web experiences in React.js, Next.js, and TypeScript — from Web3 dApps to enterprise platforms. Currently building data-transformation products at Natuvion GmbH in Berlin.",
 
   journey: "For over 13 years I've been crafting exceptional front-end experiences — from Angular SPAs and 3D interfaces with Three.js to modern React and Next.js architectures. Along the way I've led teams, built Web3 dApps, and gone full-stack with Node.js — today I build data-transformation software at Natuvion GmbH.",
   
